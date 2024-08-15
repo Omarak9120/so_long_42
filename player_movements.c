@@ -6,7 +6,7 @@
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:40:36 by oabdelka          #+#    #+#             */
-/*   Updated: 2024/08/15 13:54:36 by oabdelka         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:31:18 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ int	is_valid_move(t_game *game, int new_x, int new_y)
 void	handle_new_position(t_game *game, t_point player,
 							t_point new, char new_pos)
 {
+	if (new_pos == 'E' && game->collectables != 0)
+	{
+		write(1, "YOU HAVE TO COLLECT ALL COLLECTIBLES FIRST!\n", 43);
+		return ;
+	}
 	if (new_pos == 'C')
 		game->collectables--;
 	game->map[player.y][player.x] = '0';
