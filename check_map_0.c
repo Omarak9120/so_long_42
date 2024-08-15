@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 12:37:35 by skreik            #+#    #+#             */
-/*   Updated: 2024/08/14 21:05:10 by oabdelka         ###   ########.fr       */
+/*   Created: 2024/08/15 11:39:55 by oabdelka          #+#    #+#             */
+/*   Updated: 2024/08/15 12:40:11 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,7 @@ int	check_no_invalid_chars(char **map, int rows)
 					&& map[i][j] != 'P' && map[i][j] != 'E'
 					&& map[i][j] != 'C')
 			{
-				// Debugging output for invalid characters
-				printf("Invalid character '%c' (ASCII: %d) found at row %d, col %d\n",
+				ft_printf("Invalid c '%c' (ASCII: %d) foundAtRow %d, col %d\n",
 					map[i][j], map[i][j], i, j);
 				return (0);
 			}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map_1.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/15 11:40:01 by oabdelka          #+#    #+#             */
+/*   Updated: 2024/08/15 12:41:41 by oabdelka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	reachable_collectibles_recursive(char **tab, t_point size, t_point cur)
@@ -70,19 +82,19 @@ int	reachable_exit(char **tab, t_point size, t_point cur)
 	return (result);
 }
 
-void valid_map(char **map, t_point point)
+void	valid_map(char **map, t_point point)
 {
-    if (!check_rec(map) || !check_no_invalid_chars(map, point.y)
-        || !check_one_collectible(map, point.y)
-        || !check_single_e_p(map, point.y, 'E')
-        || !check_single_e_p(map, point.y, 'P')
-        || !check_borders(map, point.y)
-        || !reachable_exit(map, point, find_player_position(map))
-        || (count_all_collectibles(map) != reachable_collectibles(map, point,
-                find_player_position(map))))
-    {
-        write(1, "Error\n", 6);
-        free_2d_array(map);
-        exit(1);
-    }
+	if (!check_rec(map) || !check_no_invalid_chars(map, point.y)
+		|| !check_one_collectible(map, point.y)
+		|| !check_single_e_p(map, point.y, 'E')
+		|| !check_single_e_p(map, point.y, 'P')
+		|| !check_borders(map, point.y)
+		|| !reachable_exit(map, point, find_player_position(map))
+		|| (count_all_collectibles(map) != reachable_collectibles(map, point,
+				find_player_position(map))))
+	{
+		write(1, "Error\n", 6);
+		free_2d_array(map);
+		exit(1);
+	}
 }

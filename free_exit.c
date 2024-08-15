@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 13:52:56 by skreik            #+#    #+#             */
-/*   Updated: 2024/08/14 22:34:06 by oabdelka         ###   ########.fr       */
+/*   Created: 2024/08/15 11:40:07 by oabdelka          #+#    #+#             */
+/*   Updated: 2024/08/15 12:42:23 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "libft/libft.h"  // Include your libft to use ft_strlen, ft_strdup, etc.
+#include "libft/libft.h"  // Include your libft t
 
 void	free_images(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < NUM_IMAGES)

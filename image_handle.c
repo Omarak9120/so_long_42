@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   image_handle.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/15 11:40:20 by oabdelka          #+#    #+#             */
+/*   Updated: 2024/08/15 12:43:39 by oabdelka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	render_map(t_game *game)
@@ -31,14 +43,14 @@ void	load_image(t_game *game, int index, char *filename)
 	int	width;
 	int	height;
 
-    printf("Loading image: %s\n", filename);
+	printf("Loading image: %s\n", filename);
 	game->images[index] = mlx_xpm_file_to_image(game->mlx,
 			filename, &width, &height);
-    if (!game->images[index])
-    {
-        printf("Error loading image: %s\n", filename);
-        exit(1);
-    }
+	if (!game->images[index])
+	{
+		printf("Error loading image: %s\n", filename);
+		exit(1);
+	}
 }
 
 int	check_images_loaded(t_game *game)
@@ -49,10 +61,10 @@ int	check_images_loaded(t_game *game)
 	while (i < NUM_IMAGES)
 	{
 		if (game->images[i] == NULL)
-        {
-            printf("Image index %d not loaded correctly.\n", i);
+		{
+			printf("Image index %d not loaded correctly.\n", i);
 			return (1);
-        }
+		}
 		i++;
 	}
 	return (0);
