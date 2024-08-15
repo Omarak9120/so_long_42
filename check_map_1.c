@@ -70,49 +70,19 @@ int	reachable_exit(char **tab, t_point size, t_point cur)
 	return (result);
 }
 
-void	valid_map(char **map, t_point point)
+void valid_map(char **map, t_point point)
 {
-    printf("Validating map...\n");
-
-    if (!check_rec(map))
+    if (!check_rec(map) || !check_no_invalid_chars(map, point.y)
+        || !check_one_collectible(map, point.y)
+        || !check_single_e_p(map, point.y, 'E')
+        || !check_single_e_p(map, point.y, 'P')
+        || !check_borders(map, point.y)
+        || !reachable_exit(map, point, find_player_position(map))
+        || (count_all_collectibles(map) != reachable_collectibles(map, point,
+                find_player_position(map))))
     {
-        printf("Error: Map is not rectangular.\n");
+        write(1, "Error\n", 6);
+        free_2d_array(map);
         exit(1);
     }
-    if (!check_no_invalid_chars(map, point.y))
-    {
-        printf("Error: Invalid characters found.\n");
-        exit(1);
-    }
-    if (!check_one_collectible(map, point.y))
-    {
-        printf("Error: No collectibles found.\n");
-        exit(1);
-    }
-    if (!check_single_e_p(map, point.y, 'E'))
-    {
-        printf("Error: Invalid number of exits.\n");
-        exit(1);
-    }
-    if (!check_single_e_p(map, point.y, 'P'))
-    {
-        printf("Error: Invalid number of player positions.\n");
-        exit(1);
-    }
-    if (!check_borders(map, point.y))
-    {
-        printf("Error: Map borders are not enclosed.\n");
-        exit(1);
-    }
-    if (!reachable_exit(map, point, find_player_position(map)))
-    {
-        printf("Error: Exit not reachable.\n");
-        exit(1);
-    }
-    if (count_all_collectibles(map) != reachable_collectibles(map, point, find_player_position(map)))
-    {
-        printf("Error: Not all collectibles are reachable.\n");
-        exit(1);
-    }
-    printf("Map validation passed.\n");
 }
