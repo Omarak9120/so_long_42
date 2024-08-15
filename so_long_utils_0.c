@@ -6,7 +6,7 @@
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:40:45 by oabdelka          #+#    #+#             */
-/*   Updated: 2024/08/15 14:02:22 by oabdelka         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:10:48 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char	**read_map_from_file(char *file)
 		close(fd);
 		return (NULL);
 	}
-	while ((line == get_next_line(fd)) != NULL)
+	while ((line = get_next_line(fd)) != NULL)
 	{
 		store[i++] = ft_strdup(trim_newline(line));
 		free(line);
