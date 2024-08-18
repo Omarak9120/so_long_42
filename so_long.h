@@ -19,7 +19,7 @@
 # include"mlx/mlx.h"
 # include<X11/X.h>
 # include<X11/keysym.h>
-# include<stdio.h>
+// # include<stdio.h>
 # include<unistd.h>
 
 # define WIN_WIDTH  600

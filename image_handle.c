@@ -43,12 +43,12 @@ void	load_image(t_game *game, int index, char *filename)
 	int	width;
 	int	height;
 
-	printf("Loading image: %s\n", filename);
+	ft_printf("Loading image: %s\n", filename);
 	game->images[index] = mlx_xpm_file_to_image(game->mlx,
 			filename, &width, &height);
 	if (!game->images[index])
 	{
-		printf("Error loading image: %s\n", filename);
+		ft_printf("Error loading image: %s\n", filename);
 		exit(1);
 	}
 }
@@ -62,7 +62,7 @@ int	check_images_loaded(t_game *game)
 	{
 		if (game->images[i] == NULL)
 		{
-			printf("Image index %d not loaded correctly.\n", i);
+			ft_printf("Image index %d not loaded correctly.\n", i);
 			return (1);
 		}
 		i++;
