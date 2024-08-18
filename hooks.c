@@ -15,7 +15,9 @@
 int	key_press(int keycode, t_game *game)
 {
 	if (keycode == 65307)
+	{
 		exit_program(game, 4);
+	}
 	else if (keycode == 'a' || keycode == 's'
 		|| keycode == 'd' || keycode == 'w')
 		move_player(keycode, game);

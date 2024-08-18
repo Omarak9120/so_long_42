@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "libft/libft.h"  // Include your libft t
+#include "libft/libft.h"
 
 void	free_images(t_game *game)
 {
