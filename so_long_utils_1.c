@@ -6,7 +6,7 @@
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:40:51 by oabdelka          #+#    #+#             */
-/*   Updated: 2024/08/15 11:40:52 by oabdelka         ###   ########.fr       */
+/*   Updated: 2024/08/19 12:21:39 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,18 @@ t_point	find_player_position(char **map)
 int	ft_putchar(int c)
 {
 	return (write(1, &c, 1));
+}
+
+char	*ft_strcpy(char *s1, const char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s2[i])
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }

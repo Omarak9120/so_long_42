@@ -6,7 +6,7 @@
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:40:45 by oabdelka          #+#    #+#             */
-/*   Updated: 2024/08/15 18:10:48 by oabdelka         ###   ########.fr       */
+/*   Updated: 2024/08/19 12:40:53 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,54 +77,37 @@ char	*trim_newline(char *str)
 	return (str);
 }
 
-char	**read_map_from_file(char *file)
+char	**allocate_map_memory(t_point point)
 {
-	int		fd;
-	char	*line;
-	t_point	point;
 	char	**store;
-	int		i;
 
-	i = 0;
-	fd = open(file, O_RDONLY);
-	if (fd == -1)
-	{
-		ft_putstr_fd("Error: Failed to open map file.\n", 2);
-		return (NULL);
-	}
-	point = count_lines(file);
 	store = (char **)malloc(sizeof(char *) * (point.y + 1));
 	if (!store)
 	{
 		ft_putstr_fd("Error: Memory allocation failed for map storage.\n", 2);
-		close(fd);
 		return (NULL);
 	}
-	while ((line = get_next_line(fd)) != NULL)
+	store[point.y] = NULL;
+	return (store);
+}
+
+char	**fill_map_storage(int fd, char **store)
+{
+	int		i;
+	char	*line;
+
+	i = 0;
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
 		store[i++] = ft_strdup(trim_newline(line));
 		free(line);
+		line = get_next_line(fd);
 	}
-	store[point.y] = NULL;
-	close(fd);
 	if (i == 0)
 	{
 		free_2d_array(store);
 		return (NULL);
 	}
 	return (store);
-}
-
-char	*ft_strcpy(char *s1, const char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s2[i])
-	{
-		s1[i] = s2[i];
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
 }

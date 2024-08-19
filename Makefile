@@ -24,7 +24,8 @@ SRC =   free_exit.c \
         so_long_utils_0.c \
         so_long_utils_1.c \
         render_fts.c \
-        image_handle.c
+        image_handle.c \
+        read_map_from_file.c
 
 OBJ = $(SRC:.c=.o)
 

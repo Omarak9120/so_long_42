@@ -6,7 +6,7 @@
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:40:56 by oabdelka          #+#    #+#             */
-/*   Updated: 2024/08/15 11:40:57 by oabdelka         ###   ########.fr       */
+/*   Updated: 2024/08/19 12:42:46 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int		move_player(int keycode, t_game *game);
 int		load_images(t_game *game);
 t_point	find_player_position(char **map);
 char	**read_map_from_file(char *file);
+char    **allocate_map_memory(t_point point);
+char    **fill_map_storage(int fd, char **store);
 t_point	count_lines(char *file);
 int		count_all_collectibles(char **map);
 void	free_2d_array(char **array);
