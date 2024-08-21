@@ -13,7 +13,7 @@ PRINTF_LIB = $(PRINTF_DIR)/libftprintf.a
 LIBFT_LIB = $(LIBFT_DIR)/libft.a
 
 # Source files for the main project
-SRC =   free_exit.c \
+SRC =   free.c \
         player_movements.c \
         hooks.c \
         check_map0.c \
