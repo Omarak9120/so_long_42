@@ -6,7 +6,7 @@
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:40:36 by oabdelka          #+#    #+#             */
-/*   Updated: 2024/08/15 18:31:18 by oabdelka         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:43:07 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@ void	calculate_new_position(int keycode, t_point *new,
 	if (keycode == 119)
 	{
 		new->y--;
-		game->player_direction = TANK_UP;
+		game->player_direction = UP;
 	}
 	else if (keycode == 115)
 	{
 		new->y++;
-		game->player_direction = TANK_DOWN;
+		game->player_direction = DOWN;
 	}
 	else if (keycode == 97)
 	{
 		new->x--;
-		game->player_direction = TANK_LEFT;
+		game->player_direction = LEFT;
 	}
 	else if (keycode == 100)
 	{
 		new->x++;
-		game->player_direction = TANK_RIGHT;
+		game->player_direction = RIGHT;
 	}
 	ft_printf("New Position: x = %d, y = %d\n", new->x, new->y);
 }

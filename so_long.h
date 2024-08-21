@@ -6,7 +6,7 @@
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:40:56 by oabdelka          #+#    #+#             */
-/*   Updated: 2024/08/19 12:42:46 by oabdelka         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:49:48 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
-# define TANK_UP    4
-# define TANK_LEFT  7
-# define TANK_DOWN  5
-# define TANK_RIGHT 6
+# define UP    4
+# define LEFT  7
+# define DOWN  5
+# define RIGHT 6
 
 typedef struct s_point
 {
@@ -70,8 +70,8 @@ int		move_player(int keycode, t_game *game);
 int		load_images(t_game *game);
 t_point	find_player_position(char **map);
 char	**read_map_from_file(char *file);
-char    **allocate_map_memory(t_point point);
-char    **fill_map_storage(int fd, char **store);
+char	**allocate_map_memory(t_point point);
+char	**fill_map_storage(int fd, char **store);
 t_point	count_lines(char *file);
 int		count_all_collectibles(char **map);
 void	free_2d_array(char **array);
