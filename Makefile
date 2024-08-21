@@ -16,14 +16,14 @@ LIBFT_LIB = $(LIBFT_DIR)/libft.a
 SRC =   free_exit.c \
         player_movements.c \
         hooks.c \
-        check_map_0.c \
-        check_map_1.c \
+        check_map0.c \
+        check_map1.c \
         get_next_line_utils.c \
         get_next_line.c \
         main.c \
-        so_long_utils_0.c \
-        so_long_utils_1.c \
-        render_fts.c \
+        utils0.c \
+        utils1.c \
+        render.c \
         image_handle.c \
         read_map_from_file.c
 
