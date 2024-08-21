@@ -6,7 +6,7 @@
 /*   By: oabdelka <oabdelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 11:40:20 by oabdelka          #+#    #+#             */
-/*   Updated: 2024/08/15 12:43:39 by oabdelka         ###   ########.fr       */
+/*   Updated: 2024/08/21 13:06:38 by oabdelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ int	load_images(t_game *game)
 	load_image(game, 1, "images/bg.xpm");
 	load_image(game, 2, "images/exit0.xpm");
 	load_image(game, 3, "images/collect.xpm");
-	load_image(game, 4, "images/tank_u.xpm");
-	load_image(game, 5, "images/tank_d.xpm");
-	load_image(game, 6, "images/tank_r.xpm");
-	load_image(game, 7, "images/tank_l.xpm");
+	load_image(game, 4, "images/player_u.xpm");
+	load_image(game, 5, "images/player_d.xpm");
+	load_image(game, 6, "images/player_r.xpm");
+	load_image(game, 7, "images/player_l.xpm");
 	load_image(game, 8, "images/exit1.xpm");
 	return (check_images_loaded(game));
 }
