@@ -16,7 +16,10 @@
 static char	*get_file_name(int argc, char **argv)
 {
 	if (argc == 1)
-		return ("Maps/map.ber");
+	{
+		ft_printf("maps/mapi.ber");
+		exit(1);
+	}
 	else if (argc == 2)
 		return (argv[1]);
 	else

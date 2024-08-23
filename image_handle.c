@@ -49,6 +49,7 @@ void	load_image(t_game *game, int index, char *filename)
 	if (!game->images[index])
 	{
 		ft_printf("Error loading image: %s\n", filename);
+		exit_program(game, 1);
 		exit(1);
 	}
 }
